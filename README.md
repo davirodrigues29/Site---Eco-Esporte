@@ -1,0 +1,160 @@
+[gemini-code-1783101149085.html](https://github.com/user-attachments/files/29645398/gemini-code-1783101149085.html)
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Notícias - EcoEsporte</title>
+    <style>
+        /* [Mantendo os estilos anteriores...] */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { background-color: #f4f6f9; color: #333; line-height: 1.6; }
+        a { text-decoration: none; color: inherit; }
+        .container { width: 90%; max-width: 1200px; margin: 0 auto; }
+
+        /* Estilo para as novas imagens das notícias */
+        .foto-noticia {
+            width: 100%;
+            height: 200px; /* Altura fixa para manter o padrão visual dos cards */
+            object-fit: cover; /* Faz a imagem cobrir o espaço sem distorcer */
+            display: block;
+        }
+
+        /* Banners de Publicidade */
+        .anuncio-topo { background-color: #e0e0e0; width: 100%; height: 90px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 0.8rem; border-bottom: 1px solid #ccc; text-transform: uppercase; }
+        .anuncio-lateral { background-color: #e0e0e0; width: 100%; height: 250px; display: flex; align-items: center; justify-content: center; color: #666; font-size: 0.8rem; margin-bottom: 20px; border: 1px dashed #999; }
+
+        /* Estrutura do Layout */
+        header { background-color: #1a252f; color: #fff; padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+        .header-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { font-size: 1.8rem; font-weight: bold; }
+        .logo span { color: #2ecc71; }
+        nav ul { display: flex; list-style: none; }
+        nav ul li { margin-left: 20px; }
+        nav ul li a { font-weight: 600; }
+        nav ul li a:hover { color: #2ecc71; }
+
+        .main-layout { display: grid; grid-template-columns: 3fr 1fr; gap: 30px; margin-top: 30px; }
+        .secao-titulo { border-left: 5px solid #1a252f; padding-left: 10px; margin-bottom: 20px; font-size: 1.5rem; text-transform: uppercase; }
+        .economia-cor { border-left-color: #27ae60; }
+        .esporte-cor { border-left-color: #2980b9; }
+
+        .grid-noticias { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 40px; }
+        .card-noticia { background-color: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 5px rgba(0,0,0,0.05); transition: transform 0.3s; }
+        .card-noticia:hover { transform: translateY(-5px); }
+        .card-conteudo { padding: 15px; }
+
+        .tag { display: inline-block; font-size: 0.75rem; font-weight: bold; padding: 3px 8px; border-radius: 3px; color: #fff; text-transform: uppercase; margin-bottom: 10px; }
+        .tag-economia { background-color: #27ae60; }
+        .tag-esporte { background-color: #2980b9; }
+        .card-conteudo h3 { font-size: 1.1rem; margin-bottom: 10px; color: #2c3e50; }
+        .card-conteudo p { font-size: 0.9rem; color: #666; }
+
+        aside { background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); height: fit-content; }
+        .widget-titulo { font-size: 1.1rem; margin-bottom: 15px; border-bottom: 2px solid #f4f6f9; padding-bottom: 5px; }
+        .lista-mais-lidas { list-style: none; }
+        .lista-mais-lidas li { margin-bottom: 15px; font-size: 0.95rem; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        
+        footer { background-color: #1a252f; color: #fff; text-align: center; padding: 20px 0; margin-top: 40px; }
+        @media (max-width: 768px) { .main-layout { grid-template-columns: 1fr; } .header-container { flex-direction: column; gap: 15px; } nav ul li { margin: 0 10px; } }
+    </style>
+</head>
+<body>
+
+    <div class="anuncio-topo">
+        <span>Espaço Publicitário - Banner 728x90</span>
+    </div>
+
+    <header>
+        <div class="container header-container">
+            <div class="logo"><a href="#">Eco<span>Esporte</span></a></div>
+            <nav>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#economia">Economia</a></li>
+                    <li><a href="#esportes">Esportes</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container main-layout">
+        
+        <section class="conteudo-noticias">
+            
+            <div id="economia">
+                <h2 class="secao-titulo economia-cor">Economia</h2>
+                <div class="grid-noticias">
+                    
+                    <article class="card-noticia">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=500&auto=format&fit=crop&q=60" alt="Gráfico de ações subindo" class="foto-noticia">
+                        <div class="card-conteudo">
+                            <span class="tag tag-economia">Mercado</span>
+                            <h3>Bolsa de valores atinge recorde histórico nesta semana</h3>
+                            <p>Investidores reagem positivamente às novas medidas fiscais e mercado internacional impulsiona ações locais.</p>
+                        </div>
+                    </article>
+
+                    <article class="card-noticia">
+                        <img src="https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?w=500&auto=format&fit=crop&q=60" alt="Notas de dinheiro empilhadas" class="foto-noticia">
+                        <div class="card-conteudo">
+                            <span class="tag tag-economia">Finanças</span>
+                            <h3>Inflação apresenta queda e analistas projetam corte nos juros</h3>
+                            <p>O índice de preços ao consumidor veio abaixo das expectativas, trazendo otimismo para o varejo.</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+            <div id="esportes">
+                <h2 class="secao-titulo esporte-cor">Esportes</h2>
+                <div class="grid-noticias">
+                    
+                    <article class="card-noticia">
+                        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=500&auto=format&fit=crop&q=60" alt="Bola de futebol na rede" class="foto-noticia">
+                        <div class="card-conteudo">
+                            <span class="tag tag-esporte">Futebol</span>
+                            <h3>Seleção finaliza preparação para o torneio continental</h3>
+                            <p>Com elenco completo, o técnico define os titulares para a estreia que acontece na próxima sexta-feira.</p>
+                        </div>
+                    </article>
+
+                    <article class="card-noticia">
+                        <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=500&auto=format&fit=crop&q=60" alt="Corredor na linha de partida" class="foto-noticia">
+                        <div class="card-conteudo">
+                            <span class="tag tag-esporte">Olimpíadas</span>
+                            <h3>Atleta nacional quebra recorde e garante vaga nos jogos mundiais</h3>
+                            <p>Após uma performance impecável na semifinal, o tempo registrado superou as marcas anteriores da categoria.</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+
+        </section>
+
+        <aside>
+            <div class="anuncio-lateral">
+                <span>Publicidade <br> Banner 300x250</span>
+            </div>
+
+            <div class="widget">
+                <h3 class="widget-titulo">Mais Lidas</h3>
+                <ul class="lista-mais-lidas">
+                    <li><a href="#"><strong>1.</strong> Como as novas regras tributárias afetam as pequenas empresas.</a></li>
+                    <li><a href="#"><strong>2.</strong> Janela de transferências fecha com contratações milionárias no futebol.</a></li>
+                </ul>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 EcoEsporte Notícias. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
